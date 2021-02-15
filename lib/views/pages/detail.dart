@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:translate/translate.dart';
+import 'package:translated_text/translated_text.dart';
 import 'package:uni_prizren/core/functions/connection_server.dart';
 
 class DetailPage extends StatefulWidget {
@@ -19,26 +21,33 @@ class _DetailPageState extends State<DetailPage> {
     data();
   }
 
+  var datas;
   data() async {
     result = await connectionServer({
       'action': 'detail',
       'url': widget.link,
     });
-    setState(() {
-      print("Tamamdır");
-    });
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: TranslatedText(
+          widget.title,
+          to: 'tr',
+        ),
       ),
       body: result != null
           ? SingleChildScrollView(
-              child: Html(
-                data: result['data'],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TranslatedText(
+                  result['data'],
+                  to: 'tr',
+                  from: 'sq',
+                ),
               ),
             )
           : Center(

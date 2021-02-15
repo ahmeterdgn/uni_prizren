@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_prizren/core/functions/connection_server.dart';
 import 'package:uni_prizren/views/pages/detail.dart';
+import 'package:translated_text/translated_text.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(
                         builder: (context) => DetailPage(
                           link: result['items'][index]['link'],
-                          title: result['items'][index]["title"],
+                          title: result['items'][index]['title'],
                         ),
                       ),
                     );
@@ -57,8 +58,16 @@ class _HomePageState extends State<HomePage> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ListTile(
-                        title: Text(result['items'][index]["title"]),
-                        subtitle: Text(result['items'][index]["desc"]),
+                        title: TranslatedText(
+                          result['items'][index]["title"] ?? '',
+                          to: 'tr',
+                          from: 'sq',
+                        ),
+                        subtitle: TranslatedText(
+                          result['items'][index]["desc"] ?? '',
+                          to: 'tr',
+                          from: 'sq',
+                        ),
                         trailing: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
