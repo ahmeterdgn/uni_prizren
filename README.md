@@ -1,5 +1,5 @@
 # Prizren University
- University of Prizren News application
+ University of Prizren News Application
 
 Splash Screen                |  News List            | News Detail
 :-------------------------:|:-------------------------:|:-------------------------:
