@@ -3,11 +3,24 @@
 
 Splash Screen                |  News List            | News Detail
 :-------------------------:|:-------------------------:|:-------------------------:
-![alt text](https://user-images.githubusercontent.com/48730205/109386861-f48ef280-78fd-11eb-9f35-07159b57547d.jpeg "Splash Screen")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045870-5fbe5876-6aee-4ec7-b54c-077579325455.png "News List")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045865-00c3da1e-c012-4938-99de-121ecc2a99e2.png "News Detail")  
+![alt text](https://user-images.githubusercontent.com/48730205/127046816-2c3446bb-d822-4bac-a9fb-7850a7efc2a4.png "Splash Screen")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045870-5fbe5876-6aee-4ec7-b54c-077579325455.png "News List")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045865-00c3da1e-c012-4938-99de-121ecc2a99e2.png "News Detail")  
 
-News Notification            |  Lesson Notification     |  Dark Mod            
+Dark Mode List            |  Dark Mode Detail     |  About            
 :-------------------------:|:-------------------------:|:-------------------------:
-![alt text](https://user-images.githubusercontent.com/48730205/113470518-8a1a2680-9456-11eb-9ccd-e510838245d5.jpeg "Splash Screen")  |  ![alt text](https://user-images.githubusercontent.com/48730205/113470519-8ab2bd00-9456-11eb-9e74-e3f9f77be938.jpeg "News List") |  ![alt text](https://user-images.githubusercontent.com/48730205/127045881-d9046012-61fb-46d6-8d1c-85c0db7e8bac.png "News List") 
+![alt text](https://user-images.githubusercontent.com/48730205/127045881-d9046012-61fb-46d6-8d1c-85c0db7e8bac.png "Splash Screen")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045899-f5f5a6b1-c56a-47ce-9663-32e278be4920.png "News List") |  ![alt text](https://user-images.githubusercontent.com/48730205/127046902-5e042849-f6d8-4a71-ab2b-7940b4a571ec.png "About") 
+
+News Notification            |  Lesson Notification
+:-------------------------:|:-------------------------:
+![alt text](https://user-images.githubusercontent.com/48730205/113470518-8a1a2680-9456-11eb-9ccd-e510838245d5.jpeg "Splash Screen")  |  ![alt text](https://user-images.githubusercontent.com/48730205/113470519-8ab2bd00-9456-11eb-9e74-e3f9f77be938.jpeg "News List")
+
+
+
+
+
+
+
+
+
 
 
  # Plugins
