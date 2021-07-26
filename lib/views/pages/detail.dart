@@ -1,14 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:translate/translate.dart';
+import 'package:share/share.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:translated_text/translated_text.dart';
 import 'package:uni_prizren/core/functions/connection_server.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatefulWidget {
   final title;
   final link;
 
-  const DetailPage({Key key, this.title, this.link}) : super(key: key);
+  const DetailPage({this.title, this.link});
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -30,6 +32,19 @@ class _DetailPageState extends State<DetailPage> {
     setState(() {});
   }
 
+  void handleClick(String value) {
+    switch (value) {
+      case 'Tarayıcıda Aç':
+        launchURL(url: widget.link);
+        break;
+      case 'Paylaş':
+        Share.share('Üniversite Yeni Haber Yayınladı !!! ${widget.link}',
+            subject: 'Hemen Paylaş');
+
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,15 +53,30 @@ class _DetailPageState extends State<DetailPage> {
           widget.title,
           to: 'tr',
         ),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: handleClick,
+            itemBuilder: (BuildContext context) {
+              return {'Tarayıcıda Aç', 'Paylaş'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
+                );
+              }).toList();
+            },
+          ),
+        ],
       ),
       body: result != null
-          ? SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TranslatedText(
-                  result['data'],
-                  to: 'tr',
-                  from: 'sq',
+          ? Center(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TranslatedText(
+                    result['data'],
+                    to: 'tr',
+                    from: 'sq',
+                  ),
                 ),
               ),
             )
@@ -54,5 +84,13 @@ class _DetailPageState extends State<DetailPage> {
               child: CircularProgressIndicator(),
             ),
     );
+  }
+
+  launchURL({url}) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

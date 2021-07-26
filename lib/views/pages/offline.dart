@@ -3,9 +3,8 @@ import 'package:flutter_offline/flutter_offline.dart';
 
 class Offline extends StatelessWidget {
   const Offline({
-    Key key,
     this.body,
-  }) : super(key: key);
+  });
 
   final body;
   @override

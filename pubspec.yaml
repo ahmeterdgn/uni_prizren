@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -27,20 +27,19 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
-  # Network 
-  http: ^0.12.2
-  # Splash 
-  splash_screen_view: ^1.0.3
-  # Net Check 
-  flutter_offline: ^0.3.0
-  # Html
-  flutter_html: ^1.2.0
-  # Notification 
-  onesignal_flutter: ^2.6.2
-  # Translat 
+  cupertino_icons: ^1.0.2
+  http: ^0.13.3
+  splash_screen_view: ^3.0.0
+  flutter_offline: ^2.0.0
+  flutter_html: ^2.1.0
+  onesignal_flutter: ^3.1.0
   translated_text: ^0.0.2
-  translate: ^1.0.0
+  # translate: ^1.0.0
+  flutter_translate: ^3.0.1
+  get: ^4.3.0
+  share: ^2.0.4
+  url_launcher: ^6.0.9
+  shared_preferences: ^2.0.6
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +59,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/image/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

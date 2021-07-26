@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:uni_prizren/core/constants/global.dart';
 import 'package:uni_prizren/core/functions/connection_server.dart';
 import 'package:uni_prizren/views/pages/detail.dart';
-import 'package:translated_text/translated_text.dart';
+import 'package:uni_prizren/views/widgets/newsItem.dart';
+import 'package:uni_prizren/views/widgets/serverError.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,70 +24,78 @@ class _HomePageState extends State<HomePage> {
       'action': 'newslist',
     });
     setState(() {
-      print("Tamamdır");
+      print(result);
     });
+  }
+
+  bodyView() {
+    Widget body = Center(
+      child: CircularProgressIndicator(),
+    );
+    if (result != null) {
+      if (result['error'] != 'server') {
+        body = ListView.builder(
+            itemCount: result['items'].length,
+            itemBuilder: (context, index) {
+              return NewsItem(
+                result: result,
+                index: index,
+              );
+            });
+      } else if (result['error'] == 'time') {
+        body = Center(
+          child: Text("time error"),
+        );
+      } else {
+        body = ServerError();
+      }
+    }
+    return body;
+  }
+
+  void handleClick(String value) {
+    switch (value) {
+      case 'Tema Değiştir':
+        print(theme);
+        if (theme) {
+          setState(() {
+            Get.changeTheme(ThemeData(
+              primaryColor: Colors.amber,
+            ));
+            theme = false;
+          });
+        } else {
+          setState(() {
+            Get.changeTheme(ThemeData.dark());
+            theme = true;
+          });
+        }
+        break;
+      case 'Hakkında':
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Universiteti "UKSHIN HOTI" Prizren'),
-      ),
-      body: result != null
-          ? ListView.builder(
-              itemCount: result['items'].length,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  borderRadius: BorderRadius.all(Radius.circular(50)),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(
-                          link: result['items'][index]['link'],
-                          title: result['items'][index]['title'],
-                        ),
-                      ),
-                    );
-                  },
-                  splashColor: Colors.deepPurple,
-                  child: Container(
-                    margin: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(50)),
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListTile(
-                        title: TranslatedText(
-                          result['items'][index]["title"] ?? '',
-                          to: 'tr',
-                          from: 'sq',
-                        ),
-                        subtitle: TranslatedText(
-                          result['items'][index]["desc"] ?? '',
-                          to: 'tr',
-                          from: 'sq',
-                        ),
-                        trailing: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.arrow_forward_ios_outlined),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+        title: Text('UKSHIN HOTI ~ Prizren'),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: handleClick,
+            itemBuilder: (BuildContext context) {
+              return {'Tema Değiştir', 'Hakkında'}.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
                 );
-              })
-          : Center(
-              child: CircularProgressIndicator(),
-            ),
+              }).toList();
+            },
+          ),
+        ],
+      ),
+      body: bodyView(),
     );
   }
 }

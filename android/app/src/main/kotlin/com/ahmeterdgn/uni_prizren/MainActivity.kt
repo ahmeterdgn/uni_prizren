@@ -1,4 +1,4 @@
-package com.uni_prizren
+package com.ahmeterdgn.uni_prizren
 
 import io.flutter.embedding.android.FlutterActivity
 
