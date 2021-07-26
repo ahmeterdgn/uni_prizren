@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uni_prizren/core/constants/global.dart';
 import 'package:uni_prizren/core/functions/connection_server.dart';
 import 'package:uni_prizren/views/widgets/newsItem.dart';
@@ -16,73 +17,6 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     data();
-  }
-
-  data() async {
-    result = await connectionServer({
-      'action': 'newslist',
-    });
-    setState(() {
-      print(result);
-    });
-  }
-
-  bodyView() {
-    Widget body = Center(
-      child: CircularProgressIndicator(),
-    );
-    if (result != null) {
-      if (result['error'] != 'server') {
-        setState(() {
-          body = ListView.builder(
-              itemCount: result['items'].length,
-              itemBuilder: (context, index) {
-                return NewsItem(
-                  result: result,
-                  index: index,
-                );
-              });
-        });
-      } else if (result['error'] == 'time') {
-        setState(() {
-          body = Center(
-            child: Text("time error"),
-          );
-        });
-      } else {
-        setState(() {
-          body = ServerError();
-        });
-      }
-    }
-    setState(() {
-      print("asda");
-    });
-    return body;
-  }
-
-  void handleClick(String value) {
-    switch (value) {
-      case 'Tema Değiştir':
-        print(theme);
-        if (theme) {
-          setState(() {
-            Get.changeTheme(ThemeData(
-              primaryColor: Colors.amber,
-            ));
-            theme = false;
-          });
-        } else {
-          setState(() {
-            Get.changeTheme(ThemeData.dark());
-            theme = true;
-          });
-        }
-        break;
-      case 'Hakkında':
-        showMaterialDialog();
-        break;
-    }
   }
 
   @override
@@ -104,8 +38,31 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: bodyView(),
+      body: result != null
+          ? result['error'] != 'server'
+              ? ListView.builder(
+                  itemCount: result['items'].length,
+                  itemBuilder: (context, index) {
+                    return NewsItem(
+                      result: result,
+                      index: index,
+                    );
+                  },
+                )
+              : ServerError()
+          : Center(
+              child: CircularProgressIndicator(),
+            ),
     );
+  }
+
+  data() async {
+    result = await connectionServer({
+      'action': 'newslist',
+    });
+    setState(() {
+      print(result);
+    });
   }
 
   showMaterialDialog() {
@@ -125,5 +82,28 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  handleClick(String value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    switch (value) {
+      case 'Tema Değiştir':
+        setState(() {
+          theme = !theme;
+          prefs.setBool('theme', theme);
+          Get.changeTheme(
+            Get.isDarkMode
+                ? ThemeData(
+                    primaryColor: Colors.amber,
+                  )
+                : ThemeData.dark(),
+          );
+        });
+        break;
+      case 'Hakkında':
+        showMaterialDialog();
+        break;
+    }
   }
 }

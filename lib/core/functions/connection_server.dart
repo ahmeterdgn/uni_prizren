@@ -29,7 +29,7 @@ connectionServer(Map<String, dynamic> data) async {
   } on TimeoutException catch (e) {
     print(e);
     return {
-      'error': 'time',
+      'error': 'server',
     };
   } on SocketException catch (e) {
     print(e);

@@ -1,1 +1,1 @@
-var theme;
+var theme = false;

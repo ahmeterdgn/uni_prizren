@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:uni_prizren/core/constants/global.dart';
 import 'package:uni_prizren/views/pages/detail.dart';
 // ignore: import_of_legacy_library_into_null_safe

@@ -37,14 +37,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Prizren University",
+      debugShowCheckedModeBanner: false,
       theme: theme
-          ? ThemeData(
+          ? ThemeData.dark()
+          : ThemeData(
               primaryColor: Colors.amber,
-            )
-          : ThemeData.dark(),
+            ),
+      themeMode: ThemeMode.light,
+      title: "Prizren University",
       home: SplashScreenView(
-        backgroundColor: Colors.white,
+        backgroundColor: theme ? Colors.grey[900] : Colors.white,
         duration: 4000,
         imageSrc: 'assets/image/uni.png',
         text: "Powered By Ahmet Erdoğan",
