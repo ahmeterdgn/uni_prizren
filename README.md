@@ -11,12 +11,16 @@ News Notification                |  Lesson Notification
 
 
  # Plugins
-[splash_screen_view: ^1.0.3](https://pub.dev/packages/splash_screen_view) <br>
-[flutter_offline: ^0.3.0](https://pub.dev/packages/flutter_offline) <br>
-[flutter_html: ^1.2.0](https://pub.dev/packages/flutter_html)  <br>
-[onesignal_flutter: ^2.6.2](https://pub.dev/packages/onesignal_flutter)  <br>
+[http: ^0.13.3](https://pub.dev/packages/http) <br>
+[get: ^4.3.0](https://pub.dev/packages/get) <br>
+[share: ^2.0.4](https://pub.dev/packages/share) <br>
+[url_launcher: ^6.0.9](https://pub.dev/packages/url_launcher) <br>
+[shared_preferences: ^2.0.6](https://pub.dev/packages/shared_preferences) <br>
+[splash_screen_view: ^3.0.0](https://pub.dev/packages/splash_screen_view) <br>
+[flutter_offline: ^2.0.0](https://pub.dev/packages/flutter_offline) <br>
+[flutter_html: ^2.1.0](https://pub.dev/packages/flutter_html)  <br>
+[onesignal_flutter: ^3.1.0](https://pub.dev/packages/onesignal_flutter)  <br>
 [translated_text: ^0.0.2](https://pub.dev/packages/translated_text)  <br>
-[translate: ^1.0.0](https://pub.dev/packages/translate)  <br>
   
   
 

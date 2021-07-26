@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uni_prizren/core/constants/global.dart';
 import 'package:uni_prizren/views/pages/detail.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:translated_text/translated_text.dart';
@@ -28,7 +29,7 @@ class NewsItem extends StatelessWidget {
         margin: EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(50)),
-          color: Theme.of(context).accentColor,
+          color: theme ? Colors.grey[900] : Colors.white,
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

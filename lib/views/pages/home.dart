@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uni_prizren/core/constants/global.dart';
 import 'package:uni_prizren/core/functions/connection_server.dart';
-import 'package:uni_prizren/views/pages/detail.dart';
 import 'package:uni_prizren/views/widgets/newsItem.dart';
 import 'package:uni_prizren/views/widgets/serverError.dart';
 
@@ -34,22 +33,31 @@ class _HomePageState extends State<HomePage> {
     );
     if (result != null) {
       if (result['error'] != 'server') {
-        body = ListView.builder(
-            itemCount: result['items'].length,
-            itemBuilder: (context, index) {
-              return NewsItem(
-                result: result,
-                index: index,
-              );
-            });
+        setState(() {
+          body = ListView.builder(
+              itemCount: result['items'].length,
+              itemBuilder: (context, index) {
+                return NewsItem(
+                  result: result,
+                  index: index,
+                );
+              });
+        });
       } else if (result['error'] == 'time') {
-        body = Center(
-          child: Text("time error"),
-        );
+        setState(() {
+          body = Center(
+            child: Text("time error"),
+          );
+        });
       } else {
-        body = ServerError();
+        setState(() {
+          body = ServerError();
+        });
       }
     }
+    setState(() {
+      print("asda");
+    });
     return body;
   }
 
@@ -72,6 +80,7 @@ class _HomePageState extends State<HomePage> {
         }
         break;
       case 'Hakkında':
+        showMaterialDialog();
         break;
     }
   }
@@ -96,6 +105,25 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: bodyView(),
+    );
+  }
+
+  showMaterialDialog() {
+    showDialog(
+      context: context,
+      builder: (_) => new AlertDialog(
+        title: new Text("Hakkında"),
+        content: new Text(
+            "Ahmet Erdoğan Tarafından Geliştirilmiştir. \n\nİletişim Adresi -  \nahmeterdgn6@gmail.com"),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Tamam!'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          )
+        ],
+      ),
     );
   }
 }

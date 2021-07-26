@@ -41,7 +41,6 @@ class _MyAppState extends State<MyApp> {
       theme: theme
           ? ThemeData(
               primaryColor: Colors.amber,
-              accentColor: Colors.white,
             )
           : ThemeData.dark(),
       home: SplashScreenView(

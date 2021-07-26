@@ -34,8 +34,6 @@ dependencies:
   flutter_html: ^2.1.0
   onesignal_flutter: ^3.1.0
   translated_text: ^0.0.2
-  # translate: ^1.0.0
-  flutter_translate: ^3.0.1
   get: ^4.3.0
   share: ^2.0.4
   url_launcher: ^6.0.9
