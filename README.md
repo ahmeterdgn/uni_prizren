@@ -1,6 +1,11 @@
 # Prizren University
  University of Prizren News Application
 
+
+![Prizren University](https://user-images.githubusercontent.com/48730205/129037194-d4223f6a-9cd5-4531-b944-072e75d59508.gif)
+
+
+
 Splash Screen                |  News List            | News Detail
 :-------------------------:|:-------------------------:|:-------------------------:
 ![alt text](https://user-images.githubusercontent.com/48730205/127046816-2c3446bb-d822-4bac-a9fb-7850a7efc2a4.png "Splash Screen")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045870-5fbe5876-6aee-4ec7-b54c-077579325455.png "News List")  |  ![alt text](https://user-images.githubusercontent.com/48730205/127045865-00c3da1e-c012-4938-99de-121ecc2a99e2.png "News Detail")  
