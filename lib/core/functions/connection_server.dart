@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-var url = Uri.parse('http://api.ahmeterdgn.com/uni/');
+var url = Uri.parse('http://api.kodkahve.com/uni/');
 connectionServer(Map<String, dynamic> data) async {
   data['token'] = 'asfasdfasdfadsfasd';
   int timeout = 5;
