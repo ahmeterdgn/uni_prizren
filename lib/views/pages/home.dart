@@ -6,12 +6,14 @@ import 'package:uni_prizren/core/functions/connection_server.dart';
 import 'package:uni_prizren/views/widgets/newsItem.dart';
 import 'package:uni_prizren/views/widgets/serverError.dart';
 
+// ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  // ignore: prefer_typing_uninitialized_variables
   var result;
   @override
   void initState() {
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('UKSHIN HOTI ~ Prizren'),
+        title: const Text('UKSHIN HOTI ~ Prizren'),
         actions: [
           PopupMenuButton<String>(
             onSelected: handleClick,
@@ -49,8 +51,8 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                 )
-              : ServerError()
-          : Center(
+              : const ServerError()
+          : const Center(
               child: CircularProgressIndicator(),
             ),
     );
@@ -61,6 +63,7 @@ class _HomePageState extends State<HomePage> {
       'action': 'newslist',
     });
     setState(() {
+      // ignore: avoid_print
       print(result);
     });
   }
@@ -68,13 +71,13 @@ class _HomePageState extends State<HomePage> {
   showMaterialDialog() {
     showDialog(
       context: context,
-      builder: (_) => new AlertDialog(
-        title: new Text("Hakkında"),
-        content: new Text(
+      builder: (_) => AlertDialog(
+        title: const Text("Hakkında"),
+        content: const Text(
             "Ahmet Erdoğan Tarafından Geliştirilmiştir. \n\nİletişim Adresi -  \nahmeterdgn6@gmail.com"),
         actions: <Widget>[
           TextButton(
-            child: Text('Tamam!'),
+            child: const Text('Tamam!'),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -95,7 +98,7 @@ class _HomePageState extends State<HomePage> {
           Get.changeTheme(
             Get.isDarkMode
                 ? ThemeData(
-                    primaryColor: Colors.amber,
+                    primarySwatch: Colors.amber,
                   )
                 : ThemeData.dark(),
           );

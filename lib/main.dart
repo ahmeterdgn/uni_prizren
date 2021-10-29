@@ -9,10 +9,12 @@ import 'package:get/get.dart';
 import 'core/constants/global.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -41,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       theme: theme
           ? ThemeData.dark()
           : ThemeData(
-              primaryColor: Colors.amber,
+              primarySwatch: Colors.amber,
             ),
       themeMode: ThemeMode.light,
       title: "Prizren University",

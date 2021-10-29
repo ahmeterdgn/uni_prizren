@@ -1,19 +1,22 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:uni_prizren/core/constants/global.dart';
 import 'package:uni_prizren/views/pages/detail.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:translated_text/translated_text.dart';
 
 class NewsItem extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final result;
+  // ignore: prefer_typing_uninitialized_variables
   final index;
-  NewsItem({Key? key, this.result, this.index}) : super(key: key);
+  const NewsItem({Key? key, this.result, this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.all(Radius.circular(50)),
+      borderRadius: const BorderRadius.all(Radius.circular(50)),
       onTap: () {
         Navigator.push(
           context,
@@ -27,9 +30,9 @@ class NewsItem extends StatelessWidget {
       },
       splashColor: Colors.deepPurple,
       child: Container(
-        margin: EdgeInsets.all(5),
+        margin: const EdgeInsets.all(5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(50)),
+          borderRadius: const BorderRadius.all(Radius.circular(50)),
           color: theme ? Colors.grey[900] : Colors.white,
         ),
         child: Padding(
@@ -50,7 +53,7 @@ class NewsItem extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.arrow_forward_ios_outlined),
+                  icon: const Icon(Icons.arrow_forward_ios_outlined),
                 ),
               ],
             ),

@@ -3,16 +3,15 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-var url = Uri.parse('http://api.kodkahve.com/uni/');
+var url = Uri.parse('https://api.kodkahve.com/uni/');
 connectionServer(Map<String, dynamic> data) async {
   data['token'] = 'asfasdfasdfadsfasd';
-  int timeout = 5;
+  int timeout = 30;
   try {
     http.Response response =
         await http.post(url, body: data).timeout(Duration(seconds: timeout));
 
     if (response.statusCode == 200) {
-      print(response.body);
       var jsonData = json.decode(response.body);
       if (jsonData['result'] == 'success') {
         return json.decode(response.body);
@@ -27,17 +26,20 @@ connectionServer(Map<String, dynamic> data) async {
       };
     }
   } on TimeoutException catch (e) {
-    print(e);
+    // ignore: avoid_print
+    print("$e asda");
     return {
       'error': 'server',
     };
   } on SocketException catch (e) {
-    print(e);
+    // ignore: avoid_print
+    print("$e asda");
     return {
       'error': 'server',
     };
   } on Error catch (e) {
-    print(e);
+    // ignore: avoid_print
+    print("$e asda");
     return {
       'error': 'server',
     };

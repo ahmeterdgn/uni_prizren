@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ahmeterdgn.uni_prizren">
-    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="Prizren University"
         android:icon="@mipmap/ic_launcher">

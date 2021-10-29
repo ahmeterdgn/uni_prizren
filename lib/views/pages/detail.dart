@@ -7,15 +7,19 @@ import 'package:uni_prizren/core/functions/connection_server.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailPage extends StatefulWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final title;
+  // ignore: prefer_typing_uninitialized_variables
   final link;
 
+  // ignore: use_key_in_widget_constructors
   const DetailPage({this.title, this.link});
   @override
   _DetailPageState createState() => _DetailPageState();
 }
 
 class _DetailPageState extends State<DetailPage> {
+  // ignore: prefer_typing_uninitialized_variables
   var result;
   @override
   void initState() {
@@ -23,6 +27,7 @@ class _DetailPageState extends State<DetailPage> {
     data();
   }
 
+  // ignore: prefer_typing_uninitialized_variables
   var datas;
   data() async {
     result = await connectionServer({
@@ -80,7 +85,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ),
             )
-          : Center(
+          : const Center(
               child: CircularProgressIndicator(),
             ),
     );

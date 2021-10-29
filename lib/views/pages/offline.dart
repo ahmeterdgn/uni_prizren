@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 
 class Offline extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const Offline({
     this.body,
   });
 
+  // ignore: prefer_typing_uninitialized_variables
   final body;
   @override
   Widget build(BuildContext context) {
@@ -27,10 +29,10 @@ class Offline extends StatelessWidget {
                       'assets/image/offline.gif',
                       width: 250,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    const Text(
                       "Kanka Bak İnternetin Yok Ayıp Oluyor Böyle Bir Uygulamaya İnternetsiz Girmeye Çalışmak Nedir Ya Çok AYIP!",
                       style: TextStyle(color: Colors.black),
                       textAlign: TextAlign.center,

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class ServerError extends StatelessWidget {
@@ -5,7 +7,7 @@ class ServerError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         "Sunucu ile alakalı bir sorun oluştu. \n\n ahmeterdgn6@gmail.com \n\n ile iletişime geçiniz.",
         textAlign: TextAlign.center,
