@@ -5,6 +5,7 @@ import 'package:get/route_manager.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:uni/core/global/constants.dart';
+import 'package:uni/core/global/funciton.dart';
 import 'package:uni/views/screens/home.dart';
 import 'package:uni/views/screens/offline.dart';
 
@@ -24,7 +25,10 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.setAppId(
       "673f3b78-5ee7-422b-8d74-35287fef2053",
     );
-    // SharedPreferences prefs = await SharedPreferences.getInstance();
+    result = await connectionServer();
+    setState(() {
+      print(result);
+    });
   }
 
   @override
@@ -40,10 +44,18 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'UPZ ~ University of Prizren',
       home: SplashScreenView(
+        speed: 30,
         backgroundColor: theme ? Colors.grey[900] : Colors.white,
-        duration: 4000,
+        duration: 3000,
         imageSrc: pathImage + 'logo.png',
+        imageSize: 250,
         text: "Powered By Ahmet Erdoğan",
+        textStyle: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+        ),
+        textType: TextType.TyperAnimatedText,
         navigateRoute: OfflineScreen(body: HomeScreen()),
       ),
     );

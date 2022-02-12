@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce320a0-5bc4-4228-be12-ac32e8490ff6" name="Default Changelist" comment="" />
+    <list default="true" id="3ce320a0-5bc4-4228-be12-ac32e8490ff6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/global/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/global/constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/global/funciton.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/global/funciton.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/screens/list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/screens/list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/views/screens/settings.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/views/screens/settings.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ahmet\.android\avd\Pixel_2_API_30.avd]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="24yCrzscZxtz91Pvsg2GXxCrWmM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -19,5 +39,15 @@
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ce320a0-5bc4-4228-be12-ac32e8490ff6" name="Default Changelist" comment="" />
+      <created>1644662121885</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644662121885</updated>
+    </task>
+    <servers />
   </component>
 </project>
