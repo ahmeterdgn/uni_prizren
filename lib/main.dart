@@ -25,10 +25,8 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.setAppId(
       "673f3b78-5ee7-422b-8d74-35287fef2053",
     );
-    result = await connectionServer();
-    setState(() {
-      print(result);
-    });
+    // result = await connectionServer();
+    setState(() {});
   }
 
   @override

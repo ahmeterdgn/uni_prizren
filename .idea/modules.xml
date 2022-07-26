@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/uni.iml" filepath="$PROJECT_DIR$/uni.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/uni_android.iml" filepath="$PROJECT_DIR$/android/uni_android.iml" />
     </modules>
   </component>
 </project>
